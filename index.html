@@ -1,15 +1,15 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes ] Two Different jQuery Animation Methods 
+[ yes ] Add Five CSS Declarations
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
 [ no ] Feature 2 - Upload a Font
 [ no ] Feature 3 - .mouseover() Method
-[ no ] Feature 4 - :hover Feature 
+[ yes ] Feature 4 - :hover Feature 
 [ no ] Feature 5 - Add an Additional Interactive Drop-down
 -->
 
@@ -21,37 +21,52 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1 id="Quiz-Text">Quiz About Me!</h1>
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
-        🎥 What is my favorite movie?
+        What breed is my dog?
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">French Bulldog</option>
+
+          <option value="movie2">Basset Hound</option>
+          <option value="movie3">Old English Sheepdog</option>
+          <option value="movie4">Labrador Retriever</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="movie-result">
+      <p id="movieP"></p>
+      <img id="Dog1" width="230" />
+    </div>
     <hr />
     <!-- Book Question -->
     <form id="book-form">
       <label>
-        📖 What is my favorite book?
+        What is my favorite place to travel?
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Italy</option>
+          <option value="book2">Ireland</option>
+          <option value="book3">Greece</option>
+          <option value="book4">Austria</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Check Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="book-result">
+    <p id="bookP"></p>
+    <img id="Travel1" width="200" />
+</div>
+<h1>
+  How did you do?
+    </h1>
+ <img
+      id="bottom-pic"
+      src="https://1000logos.net/wp-content/uploads/2024/02/Emoji-Clap.png"
+      width="200"
+    />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       //Movie Question jQuery Code
@@ -61,10 +76,14 @@ Select ONE Additional Feature to Add
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "movie3") {
+          $("#movieP").text("WOOOOO YOU GOT IT CORRECT!");
+          $("#Dog1").attr(
+            "src",
+            "https://oldenglishsheepdogclubofamerica.org/wp-content/uploads/2020/05/01-Slider-Meet-the-Breed-1651x519-1.jpg"
+          );
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#movieP").text("Try Again!");
         }
       });
 
@@ -75,12 +94,26 @@ Select ONE Additional Feature to Add
         var $answer = $("#book-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "book4") {
+          $("#bookP").text("WOOOOO YOU GOT IT CORRECT!");
+          $("#Travel1").attr(
+            "src",
+            "https://vacations.aircanada.com/.imaging/focalarea/wide/2000x/dam/jcr:9f57420d-f494-4e9d-aee8-ea7797ae457e/MCE-16526-Austria-Main_Hallstatt-Town.jpg"
+          );
         } else {
-          $("#book-result").text("Try Again!");
+          $("#bookP").text("Try Again!");
         }
       });
+
+      $("#Quiz-Text").animate({
+        marginLeft: "20px",
+        fontSize: "5em",
+      });
+
+var $pic = $("#bottom-pic");
+      $pic.hide();
+$("#bottom-pic").slideDown(6000);
+
     </script>
   </body>
 

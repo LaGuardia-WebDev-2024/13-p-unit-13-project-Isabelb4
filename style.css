@@ -1,5 +1,5 @@
 #movie-result {
-  background: rgb(244, 98, 181);
+  background: rgb(175, 225, 175);
   border: 5px solid black;
   font-size: 24px;
   height: 160px;
@@ -8,7 +8,7 @@
 }
 
 #book-result {
-  background: rgb(196, 159, 255);
+  background: rgb(175, 225, 175);
   border: 5px solid black;
   font-size: 24px;
   height: 160px;
@@ -20,3 +20,24 @@ hr {
   height: 5px;
   background-color: black;
 }
+
+h1 {
+  color: rgb(147, 197, 114);
+}
+
+label {
+  color: rgb(46, 139, 87);
+}
+
+button {
+  color: rgb(46, 139, 87);
+}
+
+option {
+  color: rgb(46, 139, 87);
+}
+
+h1:hover {
+        background-color: rgb(147, 197, 114);
+        color: white;
+      }
